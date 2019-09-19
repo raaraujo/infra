@@ -9,6 +9,7 @@ Playbooks da aula sobre **ansible**.
 
 Testando o GitLab.
 
-'''php
+'''
+php
 <?php phpinfo();
 '''
