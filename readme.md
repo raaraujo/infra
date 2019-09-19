@@ -13,3 +13,7 @@ Testando o GitLab.
 php
 <?php phpinfo();
 '''
+
+|Nome     |Curso       |
+|---------|------------|
+|Bira     |Pyton       |
