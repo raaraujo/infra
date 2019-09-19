@@ -1,0 +1,22 @@
+- name: GitLab
+  hosts: devops
+  become: yes
+  tasks:
+    - package:
+        name: ['openssh-server','ca-certificates','curl']
+        state: present
+
+    - get_url:
+        url: https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
+        dest: /tmp/
+        mode: 0755
+
+    - shell: /tmp/script.deb.sh
+ 
+    - package:
+        name: gitlab-ce
+        state: present
+
+
+    
+                  

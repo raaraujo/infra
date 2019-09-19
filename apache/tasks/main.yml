@@ -1,0 +1,25 @@
+- name: Instalando no Debian
+  import_tasks: debian.yml
+  when: ansible_distribution|lower == 'debian'
+
+- name: Instalando Centos
+  import_tasks: centos.yml
+  when: ansible_distribution|lower == 'centos'
+
+- name: unarchive
+  unarchive:
+    src: https://hectorvido.dev/site.tar.gz
+    dest: /var/www/html
+    remote_src: yes
+
+- name: instalando arquivo
+  file:
+    path: /var/www/html/index.html
+    state: absent
+
+- name: Substituindo login.php
+  template:
+    src: login.php
+    dest: /var/www/html/login.php
+    force: yes
+
