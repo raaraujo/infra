@@ -1,3 +1,4 @@
+# Playbook de instalação de gitlab
 - name: GitLab
   hosts: devops
   become: yes
